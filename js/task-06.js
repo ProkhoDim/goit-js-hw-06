@@ -1,8 +1,7 @@
 'use strict';
 import { users } from './task-object.js';
 
-const getUsersWithAge = (users, min, max) =>
-  users.reduce((acc, item) => (item.age <= max && item.age >= min ? [...acc, item] : acc), []);
+const getUsersWithAge = (users, min, max) => users.filter(({ age }) => age <= max && age >= min);
 
 console.log(getUsersWithAge(users, 20, 30)); // [объект Ross Vazquez, объект Elma Head, объект Carey Barr]
 
